@@ -10,21 +10,21 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Register</h1>
                                     </div>
-                                    <form>
+                                    <form @submit.prevent="register">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Enter your full Name">
+                                            <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Enter your full Name" v-model="form.name">
                                         </div>
                                         <div class="form-group">
                                             <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp"
-                                                   placeholder="Enter Email Address">
+                                                   placeholder="Enter Email Address" v-model="form.email">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password">
+                                            <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password" v-model="form.password">
                                         </div>
                                         <div class="form-group">
 
                                             <input type="password" class="form-control" id="exampleInputPasswordRepeat"
-                                                   placeholder="Confirm Password">
+                                                   placeholder="Confirm Password" v-model="form.confirm_password">
                                         </div>
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-primary btn-block">Register</button>
@@ -49,8 +49,24 @@
 
 <script type="text/javascript">
 
+    export default {
+        data() {
+            return {
+                form: {
+                    name: null,
+                    email: null,
+                    password: null,
+                    confirm_password: null
+                }
+            }
+        },
+        methods: {
+            register() {
+                alert('done');
+            }
+        }
+    }
+
 </script>
 
-<script type="text/css">
 
-</script>

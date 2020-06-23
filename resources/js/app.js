@@ -12,6 +12,10 @@ Vue.use(VueRouter);
 
 import { routes } from './routes';
 
+// import User Class
+import User from './helpers/User';
+window.User = User;
+
 const router = new VueRouter({
     routes,
     mode: 'history'
@@ -20,5 +24,6 @@ const router = new VueRouter({
 
 
 const app = new Vue({
+    el: '#app',
     router
-}).$mount('#app')
+});
