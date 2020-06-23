@@ -53,6 +53,13 @@
 <script>
 
     export default {
+
+        created() {
+            if (User.loggedIn()){
+                this.$router.push({ name: 'home'})
+            }
+        },
+
         data() {
             return {
                 form: {
@@ -65,7 +72,10 @@
         methods: {
             login() {
                 axios.post('/api/auth/login', this.form)
-                .then(res => User.responseAfterLogin(res))
+                .then(res => {
+                    User.responseAfterLogin(res);
+                    this.$router.push({ name: 'home'})
+                })
                 .catch(error => console.log(error.response.data))
             }
         }
