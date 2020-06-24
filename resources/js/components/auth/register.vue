@@ -76,20 +76,6 @@
 
         methods: {
             signup() {
-                // axios.post('/api/auth/signup', this.form)
-                //     .then(res => {
-                //         User.responseAfterLogin(res);
-                //
-                //         Toast.fire({
-                //             icon: 'success',
-                //             title: 'Signed in successfully'
-                //         });
-                //
-                //         this.$router.push({ name: 'home'});
-                //     })
-                //     .catch(error => this.errors = error.response.data.errors)
-                // alert('takk')
-
 
                     axios.post('/api/auth/signup', this.form)
                         .then(res => {
