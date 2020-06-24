@@ -50,7 +50,7 @@
                 <div class="bg-white py-2 collapse-inner rounded">
 
                     <router-link class="collapse-item" href="alerts.html" to="/store-employee">Add Employee</router-link>
-                    <router-link class="collapse-item" href="buttons.html" to="">All Employee</router-link>
+                    <router-link class="collapse-item" href="buttons.html" to="/employee">All Employee</router-link>
 
                 </div>
             </div>
