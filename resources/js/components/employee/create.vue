@@ -135,7 +135,12 @@
 
         methods: {
             onFileSelected(event){
-                console.log(event);
+                let file = event.target.files[0];
+                if (file.size > 1048770){
+                    Notification.image_validation();
+                } else {
+                    console.log(event);
+                }
             },
 
             employeeInsert(){
