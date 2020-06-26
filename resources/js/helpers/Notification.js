@@ -3,9 +3,9 @@ class Notification {
 
     success(){
         new Noty({
-                type: 'succes',
+                type: 'success',
                 layout: 'topRight',
-                text: 'Some notification text',
+                text: 'Successfull',
                 timeout: 1000
             }).show();
     }
