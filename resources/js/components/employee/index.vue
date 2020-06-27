@@ -7,7 +7,11 @@
             </div>
         </div>
 
-        <br><br>
+        <br>
+
+        <input type="text" v-model="searchTerm" class="form-control" style="width: 300px;" placeholder="Search here">
+
+        <br>
 
         <div class="row">
             <div class="col-lg-12 mb-4">
@@ -29,7 +33,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr v-for="employee in employees" :key="employee.id">
+                            <tr v-for="employee in filterSearch" :key="employee.id">
                                 <td>{{ employee.name }}</td>
                                 <td><img :src="employee.photo" id="em_photo"></td>
                                 <td>{{ employee.phone }}</td>
@@ -65,8 +69,17 @@
 
         data(){
             return{
-                employees: []
+                employees: [],
+                searchTerm: ''
             }
+        },
+
+        computed: {
+          filterSearch(){
+              return this.employees.filter(employee =>{
+                  return employee.name.match(this.searchTerm)
+              })
+          }
         },
 
         methods: {
